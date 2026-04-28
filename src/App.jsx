@@ -210,7 +210,7 @@ export default function App() {
             {/* CARD UNIVAP */}
             <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden border-2 border-black cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
               <img
-                src="/univap centro bg.jpg"
+                src="/univap-bg.jpg"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 translate-y-10 scale-110
       group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
               />
@@ -218,7 +218,7 @@ export default function App() {
 
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
-                  src="/univap centro capa.jpg"
+                  src="/univap-logo.jpg"
                   className="w-20 h-20 object-cover rounded-lg
         transition-all duration-500 
         group-hover:scale-90 group-hover:-translate-y-3"
@@ -246,7 +246,7 @@ export default function App() {
             {/* CARD FATEC */}
             <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden border-2 border-black cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
               <img
-                src="/fatec bg.jpg"
+                src="/fatec-bg.jpg"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 translate-y-10 scale-110
       group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
               />
@@ -255,7 +255,7 @@ export default function App() {
 
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
-                  src="/fatec logo.jpg"
+                  src="/fatec-logo.jpg"
                   className="w-20 h-20 object-cover rounded-lg
         transition-all duration-500 
         group-hover:scale-90 group-hover:-translate-y-3"
