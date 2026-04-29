@@ -12,7 +12,7 @@ export default function App() {
 
     const section = document.getElementById(id);
     if (section) {
-      const navbarHeight = 80; 
+      const navbarHeight = 80;
 
       const offsetTop = section.offsetTop - navbarHeight;
 
@@ -156,27 +156,28 @@ export default function App() {
       </div>
 
       {/* CONTEÚDO */}
-      <div className="max-w-[1200px] w-full mx-auto mt-20 bg-white px-20 py-6 rounded-xl shadow-lg flex flex-col gap-200">
-        <div id="intro" className="bg-gray-500 rounded text-white p-4">
-          <div className="flex justify-between gap-6">
-            {/* TEXTO - lado esquerdo */}
-            <div className="flex-1">
-
-              <h1 className="text-5xl mb-3 ">Nathan Ariel Damasio Leão</h1>
+      <div className="max-w-[1200px] w-full mx-auto mt-2 px-20 py-6 rounded-xl  flex flex-col gap-70">
+        <div id="intro" className="bg-transparent rounded text-white p-4">
+          <div className="flex items-center gap-40">
+            {/* TEXTO */}
+            <div>
+              <h1 className="text-5xl mb-3 bg-gradient-to-r from-[rgb(255,28,28)] to-[rgb(243,98,178)] bg-clip-text text-transparent">
+                Nathan Ariel Damasio Leão
+              </h1>
               <h2 className="text-3xl">Estudante de Informática</h2>
             </div>
 
-            {/* IMAGEM - lado direito */}
-            <div
-              className="w-70 h-90 bg-gray-400 rounded-lg flex items-center justify-center
-                    text-black font-semibold border border-white/20"
-            >
-              Foto Aqui
+            {/* IMAGEM */}
+            <div className="w-60 h-60 rounded-full overflow-hidden border border-white/20">
+              <img
+                src="/Nathan-pfp.png"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
 
-        <div id="sobre" className="bg-gray-500 min-h-20 rounded text-white p-4">
+        <div id="sobre" className=" min-h-20 rounded text-white p-4">
           <h2 className="text-3xl mb-5">Sobre Mim</h2>
           <p>
             Atualmente sou aluno do curso tecnólogo de Desenvolvimento de
@@ -197,8 +198,7 @@ export default function App() {
             Almejo seguir carreira na área e assim construir uma carreira a
             partir desse ponto
           </p>
-          <br />
-          <p>Área de Interesse</p>
+          
         </div>
         {/*---------------------------------------------------------------------------------------------------------------------*/}
         <div
@@ -230,14 +230,19 @@ export default function App() {
                   <p className="text-sm opacity-80 group-hover:opacity-0 transition duration-300">
                     Técnico em Informática
                   </p>
-                  <p className="text-sm opacity-80 group-hover:opacity-0 transition duration-300">{"[Completo]"}</p>
+                  <p className="text-sm opacity-80 group-hover:opacity-0 transition duration-300">
+                    {"[Completo]"}
+                  </p>
 
                   <p
                     className="text-sm opacity-0 max-h-0 overflow-hidden
           group-hover:opacity-100 group-hover:max-h-40 
           transition-all duration-500"
                   >
-                    Formação técnica que marcou o início da minha trajetória na área de tecnologia, onde tive contato com lógica de programação, banco de dados e desenvolvimento de sistemas. Foi aqui que desenvolvi minha base e interesse pela área.
+                    Formação técnica que marcou o início da minha trajetória na
+                    área de tecnologia, onde tive contato com lógica de
+                    programação, banco de dados e desenvolvimento de sistemas.
+                    Foi aqui que desenvolvi minha base e interesse pela área.
                   </p>
                 </div>
               </div>
@@ -275,7 +280,10 @@ export default function App() {
           group-hover:opacity-100 group-hover:max-h-40 
           transition-all duration-500"
                   >
-                   Experiência voltada ao desenvolvimento full-stack, com foco em aplicações web modernas, APIs REST, banco de dados e boas práticas de desenvolvimento. Participação ativa em projetos acadêmicos.
+                    Experiência voltada ao desenvolvimento full-stack, com foco
+                    em aplicações web modernas, APIs REST, banco de dados e boas
+                    práticas de desenvolvimento. Participação ativa em projetos
+                    acadêmicos.
                   </p>
                 </div>
               </div>
