@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import "../App.css";
 import {
@@ -16,7 +16,17 @@ function Projeto1() {
     window.scrollTo(0, 0);
   }, []);
   const navigate = useNavigate();
-  const imagens = [img1, img2, img3,img4];
+  const location = useLocation();
+
+  const handleVoltar = () => {
+    if (location.key !== "default") {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
+
+  const imagens = [img1, img2, img3, img4];
   const [indexAtual, setIndexAtual] = useState(0);
   const [imagemAberta, setImagemAberta] = useState(false);
 
@@ -34,19 +44,20 @@ function Projeto1() {
       >
         {/* Botão voltar */}
         <button
-          onClick={() => navigate(-1)}
+          onClick={handleVoltar}
           className="text-white hover:text-red-500 text-2xl font-bold hover:-translate-x-1 transition mb-4 block"
         >
           ←
         </button>
-        <p className="bg-gradient-to-r from-red-500  to-pink-400 bg-clip-text text-transparent text-xl">Projeto Escolar</p>
+
+        <p className="text-[rgb(255,28,28)] text-xl font-poppins">Projeto Escolar</p>
 
 
-        <h1 className="text-4xl font-bold mb-2 mt-3">
+        <h1 className="text-4xl font-bold mb-5 mt-3 font-poppins">
           TCC
 
         </h1>
-        <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-pink-500 mb-6"></div>
+
 
         {/* IMAGEM PRINCIPAL */}
         <div className="relative group">
@@ -62,7 +73,7 @@ function Projeto1() {
               style={{
                 background:
                   "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                  "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
+                  "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
               }}
             >
               <SiPython className="text-yellow-500" /> Python
@@ -72,7 +83,7 @@ function Projeto1() {
               style={{
                 background:
                   "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                  "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
+                  "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
               }}
             >
               <SiMysql className="text-blue-500 text-xl" /> MySQL
@@ -104,13 +115,15 @@ function Projeto1() {
               key={i}
               src={img}
               onClick={() => setIndexAtual(i)}
-              className={`w-24 h-16 object-cover rounded cursor-pointer border-2 transition ${indexAtual === i ? "border-red-500" : "border-white/10"
+              className={`w-24 h-16 object-cover rounded cursor-pointer border-2 transition ${indexAtual === i ? "border-[rgb(255,28,28)] border-2" : "border-white/10"
                 }`}
             />
           ))}
         </div>
         <div className="flex items-center gap-3 mt-8 mb-2">
-          <div className="w-1 h-6 bg-gradient-to-b from-red-500 to-pink-500 rounded-full"></div>
+          <div className="w-[3px] h-12 bg-gradient-to-b from-transparent via-[rgb(255,28,28)] to-transparent" />
+
+
           <h3 className="text-xl text-gray-400 font-semibold ">
             Descrição
           </h3>
@@ -155,7 +168,7 @@ function Projeto1() {
 
             <button
               onClick={() => setImagemAberta(false)}
-              className="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-3xl transition"
+              className="absolute top-2 right-2 text-gray-400 hover:text-[rgb(255,28,28)] text-3xl transition"
             >
               ✕
             </button>

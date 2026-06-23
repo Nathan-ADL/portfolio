@@ -1,12 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaServer, FaPalette, FaDatabase, FaDownload } from "react-icons/fa";
 import {
   SiTailwindcss, SiPython, SiNodedotjs, SiOpenjdk, SiPhp, SiHtml5, SiReact, SiBootstrap, SiMysql, SiMongodb, SiDotnet, SiJavascript, SiCsswizardry,
 } from "react-icons/si";
 import { FaPlug } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import NetworkBackground from "./components/NetworkBackground";
 
 export default function App() {
   useEffect(() => {
@@ -35,7 +36,8 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#121212] min-h-screen h-full scroll-smooth pt-30">
+    <div className="min-h-screen h-full scroll-smooth pt-30">
+      <NetworkBackground />
       {/* OVERLAY */}
       {open && (
         <div
@@ -90,48 +92,73 @@ export default function App() {
         </button>
 
         {/* NL - centralizado absolutamente */}
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-black bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-black  text-[rgb(255,46,46)]">
           NL
         </h1>
 
         {/* Direita */}
         <div className="flex items-center gap-4 text-white">
           <a
-          href="/CV-Nathan Ariel Damasio Leão.pdf"
-          download
-          className="hidden sm:block text-xs font-bold border border-white/20 px-4 py-2 rounded-full hover:bg-red-500 transition">
-          BAIXAR CV
-        </a>
-        <div className="flex gap-3 text-3xl text-white">
-          <a href="https://github.com/Nathan-ADL" target="_blank" rel="noreferrer" className="hover:text-red-500">
-            <FaGithub />
+            href="/CV-Nathan Ariel Damasio Leão.pdf"
+            download
+            className="hidden sm:block text-xs font-bold border border-white/20 px-4 py-2 rounded-full hover:bg-red-500 transition">
+            BAIXAR CV
           </a>
-          <a href="https://www.linkedin.com/in/nathan-ariel-damasio-le%C3%A3o-7a64522b5/" target="_blank" rel="noreferrer" className="hover:text-red-500">
-            <FaLinkedin />
-          </a>
+          <div className="flex gap-3 text-3xl text-white">
+            <a href="https://github.com/Nathan-ADL" target="_blank" rel="noreferrer" className="hover:text-red-500">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/nathan-ariel-damasio-le%C3%A3o-7a64522b5/" target="_blank" rel="noreferrer" className="hover:text-red-500">
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
-    </div>
-</nav >
+      </nav>
 
-    {/* CONTEÚDO */ }
-    < div className = "max-w-[1200px] w-full mx-auto mt-10 bg-transparent px-20 py-6 rounded-xl  flex flex-col gap-80 " >
+      {/* CONTEÚDO */}
+      <div className="max-w-[1200px] w-full mx-auto mt-10 bg-transparent px-20 py-6 rounded-xl  flex flex-col gap-80 ">
         <div id="intro" className="bg-transparent rounded text-white p-4">
           <div className="flex items-center gap-40">
             {/* TEXTO */}
             <div>
-              <h2 className="text-red-500 font-mono font-medium tracking-widest uppercase">
-                Estudante de Informática
-              </h2>
+
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 Nathan Ariel <br />
-                <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+                <span className="text-[rgb(255,46,46)]">
                   Damasio Leão
                 </span>
               </h1>
+              <h2 className="text-2xl font-poppins font-medium tracking-widest uppercase">
+                Técnico em <span className="text-[rgb(255,46,46)] ">Informática</span>
+              </h2>
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a
+                  href="/CV-Nathan Ariel Damasio Damasio Leão.pdf"
+                  download
+                  className="flex items-center gap-2 px-6 py-2.5 bg-[rgb(255,46,46)] text-white text-xs font-bold tracking-widest rounded-[12px] hover:bg-white hover:text-black transition"
+                >
+                  <FaDownload className="text-sm" />
+                  BAIXAR CV
+                </a>
+                <button
+                  onClick={() => handleNavigation("projetos")}
+                  className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full hover:bg-[rgb(255,255,255)] hover:border-[rgb(255,255,255)] transition hover:text-black"
+                >
+                  PROJETOS
+                </button>
+
+                <button
+                  onClick={() => handleNavigation("contato")}
+                  className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white text-xs font-bold tracking-widest rounded-full hover:bg-[rgb(255,255,255)] hover:border-[rgb(255,255,255)] transition hover:text-black"
+                >
+                  CONTATO
+                </button>
+              </div>
+
             </div>
 
             {/* IMAGEM */}
-            <div className="w-55 h-55 rounded-full overflow-hidden border-2 ">
+            <div className="w-60 h-60 rounded-full overflow-hidden border-2 ">
               <img
                 src="/NathanAriel-pfp.png"
                 className="w-full h-full object-cover"
@@ -139,14 +166,15 @@ export default function App() {
             </div>
           </div>
         </div>
-
+        <div className="w-100 h-[3px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mt-1 mx-auto" />
         <section id="sobre" className="min-h-20 rounded text-white p-4">
-          <h2 className="text-5xl mb-5">
+          <h2 className="text-5xl mb-5 font-poppins">
             Sobre{" "}
-            <span className=" bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+            <span className=" text-[rgb(255,46,46)]">
               Mim
             </span>
           </h2>
+
           <p className="text-xl">
             Atualmente sou aluno do curso tecnólogo de Desenvolvimento de
             Software Multiplataforna na Fatec unidade de São José dos Campos,
@@ -166,41 +194,33 @@ export default function App() {
           </p>
         </section>
 
-  {/*---------------------------------------------------------------------------------------------------------------------*/ }
+        {/*---------------------------------------------------------------------------------------------------------------------*/}
         <section
           id="Form&Part"
-          className="min-h-20 text-white p-4 rounded-br-lg rounded-tl-lg rounded-tr-4xl rounded-bl-4xl  border-black"
+          className="relative min-h-20 text-white p-4 rounded-br-lg rounded-tl-lg rounded-tr-4xl rounded-bl-4xl"
         >
-          <h1 className="text-5xl">
+          <h1 className="text-5xl font-poppins">
             Formação &{" "}
-            <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
-              Participações
-            </span>
+            <span className="text-[rgb(255,46,46)]">Participações</span>
           </h1>
-          <div className="grid md:grid-cols-2 gap-15 p-2 items-start mt-10">
+
+          <div className="grid md:grid-cols-2 gap-15 p-2 items-start mt-10 grid-rows-[180px]">
             {/* CARD UNIVAP */}
-            <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden border-2 border-black cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
+            <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
               <img
                 src="/univap-bg.jpg"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 translate-y-10 scale-110
-      group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
+          group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
               />
-              <div
-                className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 group-hover:bg-black/40"
-                style={{
-                  background:
-                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                    "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-                  opacity: 0.8,
-                }}
-              ></div>
+
+              {/* Camada de escurecimento sobre a imagem no hover */}
+              <div className="absolute inset-0 bg-[#1e1e1e]/0 group-hover:bg-[#1e1e1e]/80 transition-all duration-300" />
 
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
                   src="/univap-logo.jpg"
-                  className="w-20 h-20 object-cover rounded-lg
-        transition-all duration-500 
-        group-hover:scale-90 group-hover:-translate-y-3"
+                  className="w-20 h-20 object-cover rounded-lg transition-all duration-500
+            group-hover:scale-90 group-hover:-translate-y-3"
                 />
 
                 <div>
@@ -215,8 +235,8 @@ export default function App() {
 
                   <p
                     className="text-sm opacity-0 max-h-0 overflow-hidden
-          group-hover:opacity-100 group-hover:max-h-40 
-          transition-all duration-500"
+              group-hover:opacity-100 group-hover:max-h-40
+              transition-all duration-500"
                   >
                     Formação técnica que marcou o início da minha trajetória na
                     área de tecnologia, onde tive contato com lógica de
@@ -228,29 +248,20 @@ export default function App() {
             </div>
 
             {/* CARD FATEC */}
-            <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden border-2 border-black cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
+            <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60  cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
               <img
                 src="/fatec-bg.jpg"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 translate-y-10 scale-110
-      group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
+          group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-500"
               />
 
-              <div
-                className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 group-hover:bg-black/40"
-                style={{
-                  background:
-                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                    "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-                  opacity: 0.8,
-                }}
-              ></div>
+              <div className="absolute inset-0 bg-[#1e1e1e]/0 group-hover:bg-[#1e1e1e]/80 transition-all duration-300" />
 
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
                   src="/fatec-logo.jpg"
-                  className="w-20 h-20 object-cover rounded-lg
-        transition-all duration-500 
-        group-hover:scale-90 group-hover:-translate-y-3"
+                  className="w-20 h-20 object-cover rounded-lg transition-all duration-500
+            group-hover:scale-90 group-hover:-translate-y-3"
                 />
 
                 <div>
@@ -264,8 +275,8 @@ export default function App() {
                   </p>
                   <p
                     className="text-sm opacity-0 max-h-0 overflow-hidden
-          group-hover:opacity-100 group-hover:max-h-40 
-          transition-all duration-500"
+              group-hover:opacity-100 group-hover:max-h-40
+              transition-all duration-500"
                   >
                     Experiência voltada ao desenvolvimento full-stack, com foco
                     em aplicações web modernas, APIs REST, banco de dados e boas
@@ -276,38 +287,45 @@ export default function App() {
               </div>
             </div>
           </div>
+          <div className="flex flex-col gap-3 mt-40 ml-2">
+            <div className="flex items-center gap-4">
+              <div className="w-[3px] h-7 bg-[rgb(255,28,28)] rounded-full shrink-0" />
+              <span className="text-sm text-gray-300">2025 - Maratona de Programação (Univap)</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-[3px] h-7 bg-[rgb(255,28,28)] rounded-full shrink-0" />
+              <span className="text-sm text-gray-300">2026 - Maratona de Programação (FATEC)</span>
+            </div>
+          </div>
         </section>
 
-        <section
-          id="projetos"
-          className="min-h-20 text-white p-4 "
-        >
-          <h1 className="text-5xl">
-            Projetos
+        <section id="projetos" className="min-h-20 text-white p-4">
+          <h1 className="text-5xl font-poppins">
+            Meus<span className="text-[rgb(255,46,46)]"> Projetos</span>
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             <Link
               to="/Projeto1"
               onClick={() => sessionStorage.setItem('scrollPos', window.scrollY)}
-              className="group relative rounded-xl overflow-hidden border-2 border-transparent cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 max-h-30"
-              style={{
-                background:
-                  "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                  "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-              }}
+              className="group relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 min-h-[150px]"
             >
               {/* Brilho de fundo no hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 h" />
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
               <div className="relative z-10 p-5 flex flex-col gap-3">
                 <h2 className="text-xl font-bold">TCC</h2>
                 <p className="text-sm text-gray-400">
-                  Trabalho de Conclusão de Curso,sistema de emissão de notas de despesas
+                  Trabalho de Conclusão de Curso, sistema de emissão de notas de despesas
                 </p>
-                {/* Linha de rodapé */}
-                <div className="flex items-center gap-2 mt-2 text-xs text-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Ver projeto</span>
-                  <span>→</span>
+
+                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                    Ver projeto
+                  </span>
+                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
@@ -315,130 +333,165 @@ export default function App() {
             <Link
               to="/Projeto2"
               onClick={() => sessionStorage.setItem('scrollPos', window.scrollY)}
-              className="group relative rounded-xl overflow-hidden border-2 border-transparent cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 max-h-30"
-              style={{
-                background:
-                  "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                  "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-              }}
+              className="group relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 min-h-[150px]"
             >
-              {/* Brilho de fundo no hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 h" />
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
               <div className="relative z-10 p-5 flex flex-col gap-3">
                 <h2 className="text-xl font-bold">Street Fungus</h2>
                 <p className="text-sm text-gray-400">
                   Jogo de Luta feito para feira técnica no primeiro ano técnico
                 </p>
-                {/* Linha de rodapé */}
-                <div className="flex items-center gap-2 mt-2 text-xs text-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Ver projeto</span>
-                  <span>→</span>
+
+                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                    Ver projeto
+                  </span>
+                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                    →
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/Projeto3"
+              onClick={() => sessionStorage.setItem('scrollPos', window.scrollY)}
+              className="group relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 min-h-[150px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10 p-5 flex flex-col gap-3">
+                <h2 className="text-xl font-bold">Radar Cidadão</h2>
+                <p className="text-sm text-gray-400">
+                  Site projetado projetado com o intuito de auxiliar no busca por um deputado estadual permitindo analisar e observardados do mesmo
+                </p>
+
+                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                    Ver projeto
+                  </span>
+                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                    →
+                  </span>
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/Projeto4"
+              onClick={() => sessionStorage.setItem('scrollPos', window.scrollY)}
+              className="group relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 min-h-[150px]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10 p-5 flex flex-col gap-3">
+                <h2 className="text-xl font-bold">Projeto Barbearia</h2>
+                <p className="text-sm text-gray-400">
+                  Site projetado como atividade de faculdade para funcionar como sistema de agendamento e gerenciamento de uma barbearia
+                </p>
+
+                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                    Ver projeto
+                  </span>
+                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
           </div>
         </section>
 
-        <section id="hab" className="flex flex-col gap-12 py-10 items-center text-center">
+
+
+        <section id="hab" className="relative flex flex-col gap-16 py-20 items-center px-4">
           {/* TÍTULO */}
-          <div className="flex flex-col items-center">
-            <h1 className="text-5xl text-white">Habilidades</h1>
-            <div className="w-full h-1 bg-gradient-to-r from-red-500 to-pink-500 mt-3"></div>
+          <div className="flex flex-col items-center gap-3">
+            <h1 className="text-5xl md:text-6xl font-poppins text-white">
+              Habili
+              <span className="text-[rgb(255,28,28)]">
+                dades
+              </span>
+            </h1>
+            <div className="w-50 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mt-1" />
           </div>
 
-          {/* LISTA DE HABILIDADES */}
-          <div className="flex flex-col gap-10 items-center w-full">
-            {/* BACKEND */}
-            <div className="flex flex-col gap-4 items-center">
-              <h3 className="text-xl text-gray-400 font-semibold">Backend</h3>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {[
+          {/* LINHAS HORIZONTAIS POR CATEGORIA */}
+          <div className="w-full max-w-4xl border-t border-white/10">
+            {[
+              {
+                title: "Backend",
+                skills: [
                   { icon: <SiPython className="text-yellow-500" />, label: "Python" },
                   { icon: <SiDotnet className="text-purple-500" />, label: "C#" },
                   { icon: <SiOpenjdk className="text-orange-500" />, label: "Java" },
                   { icon: <SiPhp className="text-blue-400" />, label: "PHP" },
                   { icon: <SiNodedotjs className="text-green-500" />, label: "Node.js" },
                   { icon: <FaPlug className="text-gray-400" />, label: "APIs" },
-                ].map(({ icon, label }) => (
-                  <span
-                    key={label}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-                    style={{
-                      background:
-                        "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                        "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-                    }}
-                  >
-                    {icon} {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* FRONTEND */}
-            <div className="flex flex-col gap-4 items-center">
-              <h3 className="text-xl text-gray-400 font-semibold">Frontend</h3>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {[
+                ],
+              },
+              {
+                title: "Frontend",
+                skills: [
                   { icon: <SiHtml5 className="text-orange-600" />, label: "HTML" },
                   { icon: <SiCsswizardry className="text-blue-600" />, label: "CSS" },
                   { icon: <SiJavascript className="text-yellow-400" />, label: "JavaScript" },
                   { icon: <SiReact className="text-cyan-400" />, label: "React" },
                   { icon: <SiTailwindcss className="text-cyan-500" />, label: "Tailwind" },
                   { icon: <SiBootstrap className="text-purple-600" />, label: "Bootstrap" },
-                ].map(({ icon, label }) => (
-                  <span
-                    key={label}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-                    style={{
-                      background:
-                        "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                        "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-                    }}
-                  >
-                    {icon} {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* BANCO DE DADOS */}
-            <div className="flex flex-col gap-4 items-center">
-              <h3 className="text-xl text-gray-400 font-semibold">Banco de Dados</h3>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {[
-                  { icon: <SiMysql className="text-blue-500 text-xl" />, label: "MySQL" },
+                ],
+              },
+              {
+                title: "Banco de Dados",
+                skills: [
+                  { icon: <SiMysql className="text-blue-500" />, label: "MySQL" },
                   { icon: <SiMongodb className="text-green-500" />, label: "MongoDB" },
-                ].map(({ icon, label }) => (
-                  <span
-                    key={label}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-                    style={{
-                      background:
-                        "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
-                        "linear-gradient(to right, rgb(255,28,28), rgb(243,98,178)) border-box",
-                    }}
-                  >
-                    {icon} {label}
-                  </span>
-                ))}
+                ],
+              },
+            ].map(({ title, skills }) => (
+              <div
+                key={title}
+                className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-10 py-7 border-b border-white/10 transition-colors duration-300 hover:bg-white/[0.02] px-2"
+              >
+                {/* RÓTULO DA CATEGORIA */}
+                <div className="flex items-center gap-3 md:w-44 shrink-0 text-left">
+                  <div className="w-[3px] h-7 bg-[rgb(255,28,28)] rounded-full" aria-hidden="true" />
+                  <div className="w-20 w-[3px] rounded-full bg-[rgb(255,28,28)] mt-1" />
+                  <h3 className="text-base text-white font-semibold uppercase tracking-wide">
+                    {title}
+                  </h3>
+                </div>
+
+                {/* FILEIRA DE SKILLS */}
+                <div className="flex flex-wrap gap-x-6 gap-y-3 justify-start md:justify-end flex-1">
+                  {skills.map(({ icon, label }) => (
+                    <div
+                      key={label}
+                      className="flex items-center gap-2 text-gray-300 transition-all duration-300 hover:text-white hover:-translate-y-0.5"
+                    >
+                      <span className="text-lg">{icon}</span>
+                      <span className="text-sm font-medium">{label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
         <section
           id="contato"
-          className="relative mt-20 py-20 px-6 rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-b from-white/5 to-transparent flex flex-col items-center text-center"
+          className="relative mt-20 py-16 px-6 flex flex-col items-center text-center"
         >
           {/* Efeito de brilho de fundo (opcional, dá um toque premium) */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-red-500/10 blur-[100px] -z-10"></div>
 
           <div className="space-y-4 mb-12">
-            <h2 className="text-5xl font-black bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-black text-[rgb(255,46,46)]">
               Vamos conversar?
             </h2>
-            <p className="text-gray-400 max-w-md mx-auto">
+            <p className="text-white max-w-md mx-auto">
               Estou aberto a novas oportunidades e colaborações. Sinta-se à
               vontade para me chamar em qualquer uma das redes abaixo!
             </p>
@@ -450,7 +503,7 @@ export default function App() {
               href="https://github.com/Nathan-ADL"
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-white/10 rounded-2xl transition-all duration-300 hover:border-red-500/50 hover:-translate-y-1 shadow-xl"
+              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <FaGithub className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
@@ -466,7 +519,7 @@ export default function App() {
               href="https://www.linkedin.com/in/nathan-ariel-damasio-le%C3%A3o-7a64522b5/"
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-white/10 rounded-2xl transition-all duration-300 hover:border-red-500/50 hover:-translate-y-1 shadow-xl"
+              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <FaLinkedin className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
@@ -480,7 +533,7 @@ export default function App() {
             {/* EMAIL */}
             <a
               href="mailto:nathanarieldamasioleao@gmail.com"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] shadow-xl"
+              className="group relative flex items-center gap-3 px-8 py-4 bg-[rgb(255,46,46)] rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] shadow-xl"
             >
               <div className="bg-white/20 p-2 rounded-lg">
                 <span className="text-xl">✉️</span>
@@ -494,13 +547,13 @@ export default function App() {
             </a>
           </div>
         </section>
-      </div >
+      </div>
 
-    <div className="mt-10 flex justify-center ">
-      <h1 className="text-2xl font-bold bg-gradient-to-r from-[rgb(255,28,28)] to-[rgb(243,98,178)] bg-clip-text text-transparent mb-5">
-        NL
-      </h1>
+      <div className="mt-10 flex justify-center ">
+        <h1 className="text-2xl font-bold text-[rgb(255,46,46)] mb-5">
+          NL
+        </h1>
+      </div>
     </div>
-    </div >
   );
 }
