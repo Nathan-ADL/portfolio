@@ -159,7 +159,7 @@ export default function App() {
 
             {/* IMAGEM */}
             <div className="w-60 h-60 rounded-full overflow-hidden border-2">
-              <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover" />
+              <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover"/>
             </div>
           </div>
         </div>
