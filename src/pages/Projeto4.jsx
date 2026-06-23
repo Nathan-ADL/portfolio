@@ -124,7 +124,7 @@ function Projeto4() {
 
                     </div>
                     <a href="https://github.com/Nathan-ADL/atividade4" target="_blank" className="hover:text-[rgb(255,28,28)] text-blue-400 text-xl">Repositório no GitHub</a>
-                    <p className="text-gray-400">Verificar no READE.md e GUIA_USUARIO.md o passo a passo</p>
+                    <p className="text-gray-400">Verificar no README.md e GUIA_USUARIO.md o passo a passo</p>
                     {indexAtual > 0 && (
                         <button
                             onClick={imagemAnterior}

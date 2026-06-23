@@ -159,7 +159,7 @@ export default function App() {
 
             {/* IMAGEM */}
             <div className="w-60 h-60 rounded-full overflow-hidden border-2">
-              <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover"/>
+              <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -175,21 +175,37 @@ export default function App() {
           </h2>
 
           <p className="text-xl">
-            Atualmente sou aluno do curso tecnólogo de Desenvolvimento de
-            Software Multiplataforna na Fatec unidade de São José dos Campos,
-            com foco principalmente em no desenvolvimento de aplicações Web
-            Full-Stack.
+            Atualmente sou aluno do curso tecnólogo de Desenvolvimento de Software
+            Multiplataforma na Fatec de São José dos Campos, com foco no desenvolvimento
+            de aplicações Web Full-Stack. Possuo conhecimentos em JavaScript, Python,
+            MySQL, Node.js dentre outras tecnologias, além de experiência na integração de APIs
+            para o desenvolvimento de sistemas modernos e escaláveis.
+
             <br />
             <br />
-            Me formei no ensino médio técnico no curso de Informática na escola
-            UNIVAP - Unidade centro,portanto assim experienciei diversas
-            situações que favoreceram meu desenvolviment como técnico e que me
-            permitiu o contato com a Informática antes de começar o ensino
-            superior.
+
+            Sou formado no Ensino Médio Técnico em Informática pela UNIVAP – Unidade
+            Centro, onde tive meu primeiro contato aprofundado com a área de tecnologia.
+            Durante essa formação participei de projetos que contribuíram para o
+            desenvolvimento de habilidades técnicas, resolução de problemas e trabalho em
+            equipe, competências que continuo aprimorando atualmente na FATEC por meio de
+            projetos acadêmicos colaborativos.
+
             <br />
             <br />
-            Almejo seguir carreira na área e assim construir uma carreira a
-            partir desse ponto
+
+            Ao longo da minha trajetória, desenvolvi interesse por diferentes áreas da
+            computação, incluindo desenvolvimento web, bancos de dados e integração de
+            sistemas. Recentemente, também reacendi meu interesse pela área de jogos,
+            explorando conceitos relacionados ao desenvolvimento e à tecnologia aplicada
+            ao entretenimento digital.
+
+            <br />
+            <br />
+
+            Busco constantemente aprimorar meus conhecimentos e construir uma carreira
+            sólida na área de tecnologia, participando de novos desafios e adquirindo
+            experiências que contribuam para meu crescimento profissional e pessoal.
           </p>
         </section>
 
