@@ -118,7 +118,7 @@ export default function App() {
       {/* CONTEÚDO */}
       <div className="max-w-[1200px] w-full mx-auto mt-10 bg-transparent px-20 py-6 rounded-xl  flex flex-col gap-80 ">
         <div id="intro" className="bg-transparent rounded text-white p-4">
-          <div className="flex items-center gap-40">
+          <div className="flex items-center justify-center gap-12 md:gap-20">
             {/* TEXTO */}
             <div>
 
@@ -158,15 +158,14 @@ export default function App() {
             </div>
 
             {/* IMAGEM */}
-            <div className="w-60 h-60 rounded-full overflow-hidden border-2 ">
-              <img
-                src="/NathanAriel-pfp.png"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-60 h-60 rounded-full overflow-hidden border-2">
+              <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
-        <div className="w-100 h-[3px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mt-1 mx-auto" />
+        <div className="w-100 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mx-auto" />
+
+
         <section id="sobre" className="min-h-20 rounded text-white p-4">
           <h2 className="text-5xl mb-5 font-poppins">
             Sobre{" "}
@@ -507,9 +506,6 @@ export default function App() {
             >
               <FaGithub className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
-                <span className="block text-xs text-gray-500 uppercase font-bold tracking-widest">
-                  Follow
-                </span>
                 <span className="text-white font-bold">GitHub</span>
               </div>
             </a>
@@ -523,9 +519,7 @@ export default function App() {
             >
               <FaLinkedin className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
-                <span className="block text-xs text-gray-500 uppercase font-bold tracking-widest">
-                  Connect
-                </span>
+
                 <span className="text-white font-bold">LinkedIn</span>
               </div>
             </a>
@@ -539,8 +533,8 @@ export default function App() {
                 <span className="text-xl">✉️</span>
               </div>
               <div className="text-left">
-                <span className="block text-xs text-white/70 uppercase font-bold tracking-widest">
-                  Send mail
+                <span className="block text-xs text-white uppercase font-bold tracking-widest">
+                  nathanarieldamasioleao@gmail.com
                 </span>
                 <span className="text-white font-bold">Email Me</span>
               </div>
