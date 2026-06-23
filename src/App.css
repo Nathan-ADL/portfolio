@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 @import "tailwindcss";
 html, body, #root {
   height: auto;
@@ -6,6 +7,11 @@ html, body, #root {
   overflow-y: auto;
   margin: 0;
   padding: 0;
+}
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 @keyframes fadeSlideUp {
@@ -44,4 +50,13 @@ html, body, #root {
   25%       { transform: translateX(10px) translateY(-8px); }
   50%       { transform: translateX(-6px) translateY(-16px); }
   75%       { transform: translateX(-12px) translateY(-4px); }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
 }

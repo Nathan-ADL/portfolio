@@ -3,13 +3,18 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import "../App.css";
 import {
-    SiPython, SiMysql
+    SiPython, SiMysql, SiHtml5, SiBootstrap, SiFlask, SiGit, SiGithub
 } from "react-icons/si";
-import img1 from "../img/projeto2/pj2-1.png";
-import img2 from "../img/projeto2/pj2-2.png";
-import img3 from "../img/projeto2/pj2-3.png";
+import { FaPlug } from "react-icons/fa";
+import img1 from "../img/projeto3/pj3-1.png";
+import img2 from "../img/projeto3/pj3-2.png";
+import img3 from "../img/projeto3/pj3-3.png";
+import img4 from "../img/projeto3/pj3-4.png";
+import img5 from "../img/projeto3/pj3-5.png";
+import img6 from "../img/projeto3/pj3-6.png";
+import img7 from "../img/projeto3/pj3-7.png";
 
-function Projeto2() {
+function Projeto3() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -24,7 +29,7 @@ function Projeto2() {
         }
     };
 
-    const imagens = [img3, img2, img1];
+    const imagens = [img1, img2, img3, img4, img5, img6, img7];
     const [indexAtual, setIndexAtual] = useState(0);
     const [imagemAberta, setImagemAberta] = useState(false);
 
@@ -47,11 +52,12 @@ function Projeto2() {
                 >
                     ←
                 </button>
-                <p className="text-[rgb(255,28,28)] text-xl font-poppins">Projeto Escolar</p>
+
+                <p className="text-[rgb(255,28,28)] text-xl font-poppins">Projeto Semestral - FATEC</p>
 
 
                 <h1 className="text-4xl font-bold mb-5 mt-3 font-poppins">
-                    Street Fungus
+                    Radar Cidadão
                 </h1>
 
 
@@ -72,7 +78,7 @@ function Projeto2() {
                                     "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
                             }}
                         >
-                            C#
+                            <SiPython className="text-yellow-500" /> Python
                         </span>
                         <span
                             className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
@@ -82,7 +88,58 @@ function Projeto2() {
                                     "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
                             }}
                         >
-                            Unity 2D
+                            <SiMysql className="text-blue-500 text-xl" /> MySQL
+                        </span>
+                        <span
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            style={{
+                                background:
+                                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
+                                    "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
+                            }}
+                        >
+                            <SiHtml5 className="text-orange-500 text-xl" /> MySQL
+                        </span>
+                        <span
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            style={{
+                                background:
+                                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
+                                    "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
+                            }}
+                        >
+                            <SiFlask className="text-blue-500 text-xl" /> Flask
+                        </span>
+                        <span
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            style={{
+                                background:
+                                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
+                                    "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
+                            }}
+                        >
+                            <FaPlug className="text-gray-400 text-xl" /> Flask
+                        </span>
+                        <span
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            style={{
+                                background:
+                                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
+                                    "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
+                            }}
+                        >
+                            <SiGit className="text-orange-500 text-xl" /> Git
+
+                        </span>
+                        <span
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-transparent text-white text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            style={{
+                                background:
+                                    "linear-gradient(#1e1e1e, #1e1e1e) padding-box, " +
+                                    "linear-gradient(to right, rgb(255,28,28), rgb(255,28,28)) border-box",
+                            }}
+                        >
+                            <SiGithub className="text-white text-xl" /> GitHub
                         </span>
                     </div>
 
@@ -111,23 +168,29 @@ function Projeto2() {
                             key={i}
                             src={img}
                             onClick={() => setIndexAtual(i)}
-                            className={`w-24 h-16 object-cover rounded cursor-pointer border-2 transition ${indexAtual === i ? "border-red-500" : "border-white/10"
+                            className={`w-24 h-16 object-cover rounded cursor-pointer border-2 transition ${indexAtual === i ? "border-[rgb(255,28,28)] border-2" : "border-white/10"
                                 }`}
                         />
                     ))}
                 </div>
                 <div className="flex items-center gap-3 mt-8 mb-2">
                     <div className="w-[3px] h-12 bg-gradient-to-b from-transparent via-[rgb(255,28,28)] to-transparent" />
+
+
                     <h3 className="text-xl text-gray-400 font-semibold ">
                         Descrição
                     </h3>
                 </div>
                 <p className="mt-6 text-gray-400">
-                    Projeto desenvolvido em grupo durante o primeiro ano do ensino médio técnico, como parte da minha primeira participação em uma feira técnica. Por se tratar de um projeto inicial e de uma primeira experiência com uma equipe maior, o foco esteve no aprendizado prático e na vivência do processo de desenvolvimento.
+                    Projeto semestral de faculdade desenvolvido para democratizar o acesso a dados públicos da Câmara dos Deputados. A aplicação consome informações diretamente da API oficial e as transforma em gráficos, estatísticas e visualizações intuitivas, tornando a navegação muito mais simples para o usuário comum.
+
                     <br /><br />
-                    Participei desde a programação à criação de sprites e animações, contribuindo também para a organização e colaboração em equipe. O projeto proporcionou uma experiência completa de desenvolvimento, envolvendo desde a concepção até a entrega final.
+
+                    O sistema permite consultar informações sobre parlamentares, gastos públicos, partidos, proposições e atividades legislativas, apresentando os dados de maneira organizada e acessível.
+
                     <br /><br />
-                    Apesar de não ser um projeto totalmente refinado, foi essencial para o desenvolvimento de habilidades técnicas e interpessoais, como trabalho em equipe, resolução de problemas e adaptação durante o processo.
+
+                    Além do consumo e tratamento de dados via API REST, o projeto foi construído com foco em experiência do usuário, responsividade e clareza na apresentação das informações, buscando aproximar a população dos dados governamentais e incentivar decisões mais informadas.
                 </p>
             </div>
 
@@ -162,7 +225,7 @@ function Projeto2() {
 
                         <button
                             onClick={() => setImagemAberta(false)}
-                            className="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-3xl transition"
+                            className="absolute top-2 right-2 text-gray-400 hover:text-[rgb(255,28,28)] text-3xl transition"
                         >
                             ✕
                         </button>
@@ -173,4 +236,4 @@ function Projeto2() {
     );
 }
 
-export default Projeto2;
+export default Projeto3;

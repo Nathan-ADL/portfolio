@@ -5,6 +5,8 @@ import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom' 
 import Projeto1 from './pages/Projeto1.jsx'
 import Projeto2 from './pages/Projeto2.jsx'
+import Projeto3 from './pages/Projeto3.jsx'
+import Projeto4 from './pages/Projeto4.jsx'
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
     {
       path:"/projeto2",
       element:<Projeto2 />
+    },
+    {
+      path:"/projeto3",
+      element:<Projeto3 />
+    },
+    {
+      path:"/projeto4",
+      element:<Projeto4 />
     }
 ]);
 
