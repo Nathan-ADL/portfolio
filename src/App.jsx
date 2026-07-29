@@ -36,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen h-full scroll-smooth pt-30">
+    <div className="min-h-screen h-full scroll-smooth pt-24 sm:pt-28 md:pt-30 overflow-x-hidden">
       <NetworkBackground />
       {/* OVERLAY */}
       {open && (
@@ -48,7 +48,7 @@ export default function App() {
 
       {/* MENU LATERAL (DRAWER) */}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-[#1e1e1e] border-r border-white/10 p-8 shadow-2xl z-[101] transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "-translate-x-full "
+        className={`fixed top-0 left-0 h-full w-72 max-w-[85vw] bg-[#1e1e1e] border-r border-white/10 p-6 sm:p-8 shadow-2xl z-[101] transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "-translate-x-full "
           }`}
       >
         <div className="flex items-center justify-between mb-10 text-gray-100">
@@ -79,20 +79,20 @@ export default function App() {
       </div>
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 py-4 px-6 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 py-4 px-4 sm:px-6 flex items-center justify-between">
 
         {/* Botão hamburguer - esquerda */}
         <button
           onClick={() => setOpen(true)}
           className="flex flex-col gap-1.5 cursor-pointer group p-2"
         >
-          <span className="block w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
-          <span className="block w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
-          <span className="block w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
+          <span className="block w-7 sm:w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
+          <span className="block w-7 sm:w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
+          <span className="block w-7 sm:w-8 h-0.5 bg-white group-hover:bg-red-500 transition-colors"></span>
         </button>
 
         {/* NL - centralizado absolutamente */}
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-black  text-[rgb(255,46,46)]">
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-xl sm:text-2xl font-black text-[rgb(255,46,46)]">
           NL
         </h1>
 
@@ -116,9 +116,9 @@ export default function App() {
       </nav>
 
       {/* CONTEÚDO */}
-      <div className="max-w-[1200px] w-full mx-auto mt-10 bg-transparent px-20 py-6 rounded-xl  flex flex-col gap-80 ">
-        <div id="intro" className="bg-transparent rounded text-white p-4">
-          <div className="flex items-center justify-center gap-12 md:gap-20">
+      < div className="max-w-[1200px] w-full mx-auto mt-10 bg-transparent px-4 sm:px-8 md:px-12 lg:px-20 py-6 rounded-xl flex flex-col gap-16 sm:gap-24 md:gap-40 lg:gap-80" >
+        <div id="intro" className="bg-transparent rounded text-white p-2 sm:p-4">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 md:gap-20 text-center md:text-left">
             {/* TEXTO */}
             <div>
 
@@ -158,23 +158,23 @@ export default function App() {
             </div>
 
             {/* IMAGEM */}
-            <div className="w-60 h-60 rounded-full overflow-hidden border-2">
+            <div className="w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-2 shrink-0">
               <img src="/NathanAriel-pfp.png" className="w-full h-full object-cover" />
             </div>
           </div>
-        </div>
-        <div className="w-100 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mx-auto" />
+        </div >
+        <div className="w-2/3 sm:w-100 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mx-auto" />
 
 
-        <section id="sobre" className="min-h-20 rounded text-white p-4">
-          <h2 className="text-5xl mb-5 font-poppins">
+        <section id="sobre" className="min-h-20 rounded text-white p-2 sm:p-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-5 font-poppins">
             Sobre{" "}
             <span className=" text-[rgb(255,46,46)]">
               Mim
             </span>
           </h2>
 
-          <p className="text-xl">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
             Atualmente sou aluno do curso tecnólogo de Desenvolvimento de Software
             Multiplataforma na Fatec de São José dos Campos, com foco no desenvolvimento
             de aplicações Web Full-Stack. Possuo conhecimentos em JavaScript, Python,
@@ -212,14 +212,14 @@ export default function App() {
         {/*---------------------------------------------------------------------------------------------------------------------*/}
         <section
           id="Form&Part"
-          className="relative min-h-20 text-white p-4 rounded-br-lg rounded-tl-lg rounded-tr-4xl rounded-bl-4xl"
+          className="relative min-h-20 text-white p-2 sm:p-4 rounded-br-lg rounded-tl-lg rounded-tr-4xl rounded-bl-4xl"
         >
-          <h1 className="text-5xl font-poppins">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins">
             Formação &{" "}
             <span className="text-[rgb(255,46,46)]">Participações</span>
           </h1>
 
-          <div className="grid md:grid-cols-2 gap-15 p-2 items-start mt-10 grid-rows-[180px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 md:gap-15 p-2 items-start mt-10 grid-rows-none sm:grid-rows-[180px]">
             {/* CARD UNIVAP */}
             <div className="group relative min-h-35 hover:min-h-70 rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700/60 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 -m-2">
               <img
@@ -234,12 +234,12 @@ export default function App() {
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
                   src="/univap-logo.jpg"
-                  className="w-20 h-20 object-cover rounded-lg transition-all duration-500
-            group-hover:scale-90 group-hover:-translate-y-3"
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg transition-all duration-500
+            group-hover:scale-90 group-hover:-translate-y-3 shrink-0"
                 />
 
                 <div>
-                  <h2 className="text-xl font-bold">UNIVAP</h2>
+                  <h2 className="text-lg sm:text-xl font-bold">UNIVAP</h2>
 
                   <p className="text-sm opacity-80 group-hover:opacity-0 transition duration-300">
                     Técnico em Informática
@@ -275,12 +275,12 @@ export default function App() {
               <div className="relative z-10 flex items-start gap-3 p-4">
                 <img
                   src="/fatec-logo.jpg"
-                  className="w-20 h-20 object-cover rounded-lg transition-all duration-500
-            group-hover:scale-90 group-hover:-translate-y-3"
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg transition-all duration-500
+            group-hover:scale-90 group-hover:-translate-y-3 shrink-0"
                 />
 
                 <div>
-                  <h2 className="text-xl font-bold">FATEC</h2>
+                  <h2 className="text-lg sm:text-xl font-bold">FATEC</h2>
 
                   <p className="text-sm opacity-80 group-hover:opacity-0 transition duration-300">
                     DSM - Desenvolvimento de Software
@@ -302,7 +302,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-3 mt-40 ml-2">
+          <div className="flex flex-col gap-3 mt-10 sm:mt-16 md:mt-40 ml-2">
             <div className="flex items-center gap-4">
               <div className="w-[3px] h-7 bg-[rgb(255,28,28)] rounded-full shrink-0" />
               <span className="text-sm text-gray-300">2025 - Maratona de Programação (Univap)</span>
@@ -314,8 +314,8 @@ export default function App() {
           </div>
         </section>
 
-        <section id="projetos" className="min-h-20 text-white p-4">
-          <h1 className="text-5xl font-poppins">
+        <section id="projetos" className="min-h-20 text-white p-2 sm:p-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins">
             Meus<span className="text-[rgb(255,46,46)]"> Projetos</span>
           </h1>
 
@@ -334,11 +334,11 @@ export default function App() {
                   Trabalho de Conclusão de Curso, sistema de emissão de notas de despesas
                 </p>
 
-                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                <div className="flex items-center gap-2 mt-2 text-xs text-white opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover:text-red-400">
                     Ver projeto
                   </span>
-                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                  <span className="transition-all duration-300 group-hover:text-red-400 group-hover:translate-x-1">
                     →
                   </span>
                 </div>
@@ -358,11 +358,11 @@ export default function App() {
                   Jogo de Luta feito para feira técnica no primeiro ano técnico
                 </p>
 
-                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                <div className="flex items-center gap-2 mt-2 text-xs text-white opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover:text-red-400">
                     Ver projeto
                   </span>
-                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                  <span className="transition-all duration-300 group-hover:text-red-400 group-hover:translate-x-1">
                     →
                   </span>
                 </div>
@@ -379,14 +379,14 @@ export default function App() {
               <div className="relative z-10 p-5 flex flex-col gap-3">
                 <h2 className="text-xl font-bold">Radar Cidadão</h2>
                 <p className="text-sm text-gray-400">
-                  Site projetado projetado com o intuito de auxiliar no busca por um deputado estadual permitindo analisar e observardados do mesmo
+                  Site projetado com o intuito de auxiliar no busca por um deputado estadual permitindo analisar e observar dados do mesmo
                 </p>
 
-                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                <div className="flex items-center gap-2 mt-2 text-xs text-white opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover:text-red-400">
                     Ver projeto
                   </span>
-                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                  <span className="transition-all duration-300 group-hover:text-red-400 group-hover:translate-x-1">
                     →
                   </span>
                 </div>
@@ -405,11 +405,11 @@ export default function App() {
                   Site projetado como atividade de faculdade para funcionar como sistema de agendamento e gerenciamento de uma barbearia
                 </p>
 
-                <div className="group/footer flex items-center gap-2 mt-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="transition-colors duration-300 group-hover/footer:text-red-400">
+                <div className="flex items-center gap-2 mt-2 text-xs text-white opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300">
+                  <span className="transition-colors duration-300 group-hover:text-red-400">
                     Ver projeto
                   </span>
-                  <span className="transition-all duration-300 group-hover/footer:text-red-400 group-hover/footer:translate-x-1">
+                  <span className="transition-all duration-300 group-hover:text-red-400 group-hover:translate-x-1">
                     →
                   </span>
                 </div>
@@ -420,16 +420,16 @@ export default function App() {
 
 
 
-        <section id="hab" className="relative flex flex-col gap-16 py-20 items-center px-4">
+        <section id="hab" className="relative flex flex-col gap-10 sm:gap-16 py-12 sm:py-20 items-center px-2 sm:px-4">
           {/* TÍTULO */}
           <div className="flex flex-col items-center gap-3">
-            <h1 className="text-5xl md:text-6xl font-poppins text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-poppins text-white">
               Habili
               <span className="text-[rgb(255,28,28)]">
                 dades
               </span>
             </h1>
-            <div className="w-50 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mt-1" />
+            <div className="w-32 sm:w-50 h-[2px] bg-gradient-to-r from-transparent via-[rgb(255,28,28)] to-transparent mt-1" />
           </div>
 
           {/* LINHAS HORIZONTAIS POR CATEGORIA */}
@@ -467,19 +467,18 @@ export default function App() {
             ].map(({ title, skills }) => (
               <div
                 key={title}
-                className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-10 py-7 border-b border-white/10 transition-colors duration-300 hover:bg-white/[0.02] px-2"
+                className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-10 py-6 sm:py-7 border-b border-white/10 transition-colors duration-300 hover:bg-white/[0.02] px-2"
               >
                 {/* RÓTULO DA CATEGORIA */}
                 <div className="flex items-center gap-3 md:w-44 shrink-0 text-left">
                   <div className="w-[3px] h-7 bg-[rgb(255,28,28)] rounded-full" aria-hidden="true" />
-                  <div className="w-20 w-[3px] rounded-full bg-[rgb(255,28,28)] mt-1" />
                   <h3 className="text-base text-white font-semibold uppercase tracking-wide">
                     {title}
                   </h3>
                 </div>
 
                 {/* FILEIRA DE SKILLS */}
-                <div className="flex flex-wrap gap-x-6 gap-y-3 justify-start md:justify-end flex-1">
+                <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-3 justify-start md:justify-end flex-1">
                   {skills.map(({ icon, label }) => (
                     <div
                       key={label}
@@ -497,28 +496,28 @@ export default function App() {
 
         <section
           id="contato"
-          className="relative mt-20 py-16 px-6 flex flex-col items-center text-center"
+          className="relative mt-10 sm:mt-20 py-12 sm:py-16 px-4 sm:px-6 flex flex-col items-center text-center"
         >
           {/* Efeito de brilho de fundo (opcional, dá um toque premium) */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-red-500/10 blur-[100px] -z-10"></div>
 
-          <div className="space-y-4 mb-12">
-            <h2 className="text-5xl font-black text-[rgb(255,46,46)]">
+          <div className="space-y-4 mb-10 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[rgb(255,46,46)]">
               Vamos conversar?
             </h2>
-            <p className="text-white max-w-md mx-auto">
+            <p className="text-white max-w-md mx-auto text-sm sm:text-base">
               Estou aberto a novas oportunidades e colaborações. Sinta-se à
               vontade para me chamar em qualquer uma das redes abaixo!
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none">
             {/* GITHUB */}
             <a
               href="https://github.com/Nathan-ADL"
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative flex items-center justify-center sm:justify-start gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <FaGithub className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
@@ -531,7 +530,7 @@ export default function App() {
               href="https://www.linkedin.com/in/nathan-ariel-damasio-le%C3%A3o-7a64522b5/"
               target="_blank"
               rel="noreferrer"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative flex items-center justify-center sm:justify-start gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#1e1e1e] border border-zinc-700/60 hover:border-[rgb(255,28,28)] rounded-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <FaLinkedin className="text-2xl text-white group-hover:text-red-500 transition-colors" />
               <div className="text-left">
@@ -543,27 +542,27 @@ export default function App() {
             {/* EMAIL */}
             <a
               href="mailto:nathanarieldamasioleao@gmail.com"
-              className="group relative flex items-center gap-3 px-8 py-4 bg-[rgb(255,46,46)] rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] shadow-xl"
+              className="group relative flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[rgb(255,46,46)] rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] shadow-xl min-w-0"
             >
-              <div className="bg-white/20 p-2 rounded-lg">
+              <div className="bg-white/20 p-2 rounded-lg shrink-0">
                 <span className="text-xl">✉️</span>
               </div>
-              <div className="text-left">
-                <span className="block text-xs text-white uppercase font-bold tracking-widest">
+              <div className="text-left min-w-0">
+                <span className="block text-xs text-white uppercase font-bold tracking-widest break-all">
                   nathanarieldamasioleao@gmail.com
                 </span>
                 <span className="text-white font-bold">Email Me</span>
               </div>
-            </a>
-          </div>
-        </section>
-      </div>
+            </a >
+          </div >
+        </section >
+      </div >
 
       <div className="mt-10 flex justify-center ">
         <h1 className="text-2xl font-bold text-[rgb(255,46,46)] mb-5">
           NL
         </h1>
       </div>
-    </div>
+    </div >
   );
 }
